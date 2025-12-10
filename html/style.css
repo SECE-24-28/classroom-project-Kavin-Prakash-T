@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+}
+button{
+    color: white;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+button:hover{
+    background-color: rgb(145, 142, 142);
+}
+.card{
+    border: 1px solid black;
+    padding: 20px;
+    margin-left:25%;
+    text-align: center;
+    background-color: antiquewhite;
+    width :50%;
+}
+ul{
+    list-style: none;
+}
+.card img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+.card img:hover{
+    border: 1px solid black;
+}
