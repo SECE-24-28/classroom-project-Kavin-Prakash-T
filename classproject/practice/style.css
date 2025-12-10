@@ -1,0 +1,174 @@
+.parent h1{
+    color: blue;
+}
+
+div h1{
+    color: orange;
+}
+
+h1{
+    color: green;
+}
+/*1-0-0 => 100*/
+#red{
+    color:red;
+}
+.yellow{
+    color: yellow;
+}
+/*0-1-1 => 11*/
+
+#red:hover{
+color:blueviolet;
+}
+
+h1:hover{
+    color: blueviolet;
+}
+
+/*button{
+    background-color: yellow;
+    padding:10px 20px;
+    border:2px solid black;
+    margin:10px;
+    border-radius: 50px;
+}*/
+button:hover{
+    background-color: blueviolet;
+    color:white;
+}
+.card{
+    width:300px;
+    border:20px solid rgb(233, 225, 225);
+}
+
+.content{
+    padding: 20px;
+}
+.card img{
+    width:100%;
+}
+
+.content h1{
+    margin: 0;
+    color: black;
+}
+
+
+.content button{
+    width:100%;
+    background-color: rgb(241, 168, 241);
+    padding: 10px 20px;
+    border:none;
+}
+
+.parent{
+    background-color: red;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap:10px;
+}
+.child{
+    padding: 50px;
+    background-color: yellow;
+    border:1px solid black;
+}
+.long{
+    height:150px;
+}
+
+.navbar{
+    margin-top: 10px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    display:flex;
+    justify-content: space-between;
+}
+
+.navbar h4{
+    color: rgb(183, 0, 255);
+}
+.btn .s-btn{
+    padding: 10px;
+    background-color: rgb(183, 0, 255);
+    color: white;
+    border-radius: 5px;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+.nav{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px; 
+}
+
+.transition-btn{
+    background:red;
+   /* transition:all 1s;*/
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    /*animation: bounce 1s infinite;*/
+}
+.transition-btn:hover{
+    background:yellow;
+    color: white;
+    /*transform:scale(1.3);*/
+}
+
+/*.heart{
+    height:100px;
+    width:100px;
+    background-color: red;
+    border-radius:100%;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes bounce{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+    100%{transform:translateY(0);}
+}
+
+
+@keyframes heartbeat{
+    0%{transform:scale(0.5);}
+    25%{transform:scale(0.75)}
+    50%{transform:scale(1);}
+     50%{transform:scale(1.25);}
+    100%{transform:scale(1.5);}
+}*/
+
+@media (min-width:480px) and (max-width:768px){
+    .transition-btn{
+        background-color: aqua;
+        color: black;
+    }
+    /*
+    .navbar .nav{
+        display: none;
+    }*/
+}
+@media (max-width:768px){
+    .navbar .nav{
+        display: none;
+    }
+}
+
+@media (max-width:480px){
+    .card{
+       width:100%; 
+    }
+}
