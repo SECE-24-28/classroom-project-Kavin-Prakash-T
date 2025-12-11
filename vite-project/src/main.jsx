@@ -12,6 +12,8 @@ import BlogList from './components/BlogList.jsx'
 import BlogDetails from './components/BlogDetails.jsx'
 import AdminPage from './components/AdminPage.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
+import { ToastContainer } from 'react-toastify'
+
 const products = [
     {
         id: 1,
@@ -36,28 +38,30 @@ const products = [
 
 createRoot(document.getElementById('root')).render(
 
-
-    <BrowserRouter>
-        <Routes>
-            <Route element={<HomeLayout />}>
-                <Route path='/' element={<App />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path="/products">
-                    <Route index element={<ProductList products={products} />} />
-                    <Route path=":id" element={<ProductDetails />} />
+    <>
+        <ToastContainer />
+        <BrowserRouter>
+            <Routes>
+                <Route element={<HomeLayout />}>
+                    <Route path='/' element={<App />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path="/products">
+                        <Route index element={<ProductList products={products} />} />
+                        <Route path=":id" element={<ProductDetails />} />
+                    </Route>
+                    <Route path="/blogs">
+                        <Route index element={<BlogList />} />
+                        <Route path=":id" element={<BlogDetails />} />
+                    </Route>
                 </Route>
-                <Route path="/blogs">
-                    <Route index element={<BlogList />} />
-                    <Route path=":id" element={<BlogDetails />} />
-                </Route>
-            </Route>
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/admin" element={
-                <ProtectedRoute>
-                    <AdminPage />
-                </ProtectedRoute>
-            } />
-        </Routes>
-    </BrowserRouter>
+                <Route path="/login" element={<LoginForm />} />
+                <Route path="/admin" element={
+                    <ProtectedRoute>
+                        <AdminPage />
+                    </ProtectedRoute>
+                } />
+            </Routes>
+        </BrowserRouter>
+    </>
 )

@@ -1,5 +1,6 @@
 import { useRef,useState } from "react";
 import { Navigate, useNavigate } from "react-router";
+import {toast} from "react-toastify"
 
 const LoginForm = () => {
 
@@ -16,11 +17,11 @@ const LoginForm = () => {
         e.preventDefault()
         console.log(username,passwordRef.current.value)
         if(username==='abc' && passwordRef.current.value==='123'){
-            console.log("Login Successful")
+            toast.success("Login Successful")
             sessionStorage.setItem('isLoggedIn',true);
             navigate("/admin")
         }else{
-            console.log("Login Failed")
+            toast.error("Login Failed")
             sessionStorage.setItem('isLoggedIn',false);
         }
     }

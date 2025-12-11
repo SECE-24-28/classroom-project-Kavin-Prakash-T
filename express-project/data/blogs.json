@@ -1,0 +1,7 @@
+[
+  {
+    "id": 2,
+    "title": "Hello Node",
+    "description": "Dive into the world of Node.js, the powerful open-source runtime that lets you run JavaScript outside the browser. This post will introduce the core concepts of Node.js, explain its non-blocking, event-driven architecture, and walk you through creating your very first Hello World server. Perfect for developers looking to expand their skills into backend development."
+  }
+]

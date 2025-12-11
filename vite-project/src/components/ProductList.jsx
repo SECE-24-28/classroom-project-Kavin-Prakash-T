@@ -4,27 +4,17 @@ import ProductForm from "./ProductForm";
 
 const ProductList = () => {
  
-    const [products,setProducts]=useState([
-        {
-            id: 1,
-            name: "Product 1",
-            price: 100,
-            image: "https://picsum.photos/id/7/300/300"
-        },
-        {
-            id: 2,
-            name: "Product 2",
-            price: 200,
-            image: "https://picsum.photos/id/74/300/300"
-        },
-        {
-            id: 3,
-            name: "Product 3",
-            price: 300,
-            image: "https://picsum.photos/id/15/300/300"
-        }
-    ]
-)
+    const [products,setProducts]=useState([])
+
+     useEffect(()=>{
+       const fetchData=async()=>{
+           const response=await fetch(`http://localhost:3000/products`)
+           const data=await response.json();
+           console.log(data)
+           setProducts(data)
+       }
+       fetchData()
+    },[])
 
     return (
 
