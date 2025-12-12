@@ -17,6 +17,9 @@ const app=express()
 const cors=require("cors")
 const productsRouter=require("./routes/products")
 const blogsRouter=require("./routes/blogs")
+const createDB=require("./config/db")
+
+createDB()
 
 app.use(cors())
 app.use(express.json())
@@ -36,7 +39,6 @@ app.use((req,res,next)=>{
 
 
 //app.use(express.json()) - to pass the data body from postman to code
-
 
 
 app.use("/products",productsRouter)
