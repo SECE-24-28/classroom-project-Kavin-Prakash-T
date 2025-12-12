@@ -1,6 +1,10 @@
+import ProductForm from "./ProductForm"
+
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <>
+    <ProductForm/>
+    </>
   )
 }
 

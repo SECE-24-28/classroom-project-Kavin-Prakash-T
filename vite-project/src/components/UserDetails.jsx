@@ -16,6 +16,7 @@ const UserDetails =()=>{
            setIsLoading(false)
            console.log(data)
            setUserData(data)
+           
        }
        fetchData()
     },[currentPage])

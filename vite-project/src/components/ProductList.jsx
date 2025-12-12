@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import ProductForm from "./ProductForm";
+import axios from "axios";
 
 const ProductList = () => {
  
@@ -8,10 +8,8 @@ const ProductList = () => {
 
      useEffect(()=>{
        const fetchData=async()=>{
-           const response=await fetch(`http://localhost:3000/products`)
-           const data=await response.json();
-           console.log(data)
-           setProducts(data)
+           const response=await axios.get(`http://localhost:3000/products`)
+           setProducts(response.data)
        }
        fetchData()
     },[])
@@ -25,7 +23,6 @@ const ProductList = () => {
             
         )}
         </div>
-    <ProductForm products={products} setProducts={setProducts}/>
     </>
     
     )

@@ -16,5 +16,17 @@
     "name": "Product 4",
     "price": 400,
     "image": "https://picsum.photos/id/20/300/300"
+  },
+  {
+    "id": 5,
+    "name": "Fan",
+    "price": "1000",
+    "image": "https://picsum.photos/id/4/300/300"
+  },
+  {
+    "id": 6,
+    "name": "Tv",
+    "price": "10000",
+    "image": "https://picsum.photos/id/4/300/300"
   }
 ]
