@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRef,useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 import {toast} from "react-toastify"
@@ -5,6 +6,7 @@ import {toast} from "react-toastify"
 const LoginForm = () => {
 
     const navigate=useNavigate();
+     const API_URL = import.meta.env.VITE_API_BASE_URL;
 
     const [username, setUsername] = useState("")
     const passwordRef=useRef("");
@@ -13,18 +15,16 @@ const LoginForm = () => {
         setUsername(e.target.value)
     }
     
-    const handleSubmit=(e)=>{
+    const handleSubmit=async(e)=>{
         e.preventDefault()
-        console.log(username,passwordRef.current.value)
-        if(username==='abc' && passwordRef.current.value==='123'){
-            toast.success("Login Successful")
-            sessionStorage.setItem('isLoggedIn',true);
-            navigate("/admin")
-        }else{
-            toast.error("Login Failed")
-            sessionStorage.setItem('isLoggedIn',false);
+        const {data}= await axios.post(`${API_URL}/auth/login`,{
+            email:username,
+            password:passwordRef.current.value});
+            toast.success(data.messsage)
+            sessionStorage.setItem("token",data.token)
+            sessionStorage.setItem('isLoggedIn', 'true');
+            navigate("/products")
         }
-    }
 
     return (
         <>

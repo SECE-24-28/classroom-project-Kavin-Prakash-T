@@ -26,8 +26,6 @@ const App = () => {
         <UserDetails />
         <Footer />
       </GlobalProvider>
-      <LoginForm />
-      <ProductList />
     </>
   )
 }

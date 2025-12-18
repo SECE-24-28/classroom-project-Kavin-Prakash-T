@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 const ProductForm = () => {
 
     const navigate=useNavigate("")
+     const API_URL = import.meta.env.VITE_API_BASE_URL;
 
     const [name, setName] = useState("")
     const [image, setImage] = useState("")
@@ -25,7 +26,7 @@ const ProductForm = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        const response=await axios.post("http://localhost:3000/products",{
+        const response=await axios.post(` ${API_URL}/products`,{
             name:name,
             image:image,
             price:price

@@ -3,12 +3,13 @@ import ProductCard from "./ProductCard";
 import axios from "axios";
 
 const ProductList = () => {
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
  
     const [products,setProducts]=useState([])
 
      useEffect(()=>{
        const fetchData=async()=>{
-           const response=await axios.get(`http://localhost:3000/products`)
+           const response=await axios.get(`${API_URL}/products`)
            setProducts(response.data)
        }
        fetchData()

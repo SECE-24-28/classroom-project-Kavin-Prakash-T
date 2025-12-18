@@ -2,11 +2,11 @@ const mongoose=require("mongoose")
 
 async function connectDB(){
     try{
-        await mongoose.connect("mongodb://localhost:27017/school");
+        await mongoose.connect(process.env.MONGO_URL);
         console.log("MongoDB connected✅")
     }
     catch(err){
-        console.log("Mongodb commection error❌")
+        console.log("Mongodb connection error❌",err.message);
         process.exit(1);
     }
 }
